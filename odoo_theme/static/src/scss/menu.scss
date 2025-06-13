@@ -1,0 +1,185 @@
+//sidebar
+ul.o_menu_apps {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    max-height: 100vh;
+    height: 100vh;
+    width: 220px;
+    background: $background-color;
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+    transform: translateX(-100%);
+    transition: 0.4s;
+}
+
+ul.o_menu_apps li.dropdown {
+    height: 100%;
+    width: 100%;
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+}
+
+ul.o_menu_apps li.dropdown a.full {
+    display: none;
+}
+
+ul.o_menu_apps .logo-container{
+    position: sticky;
+    z-index: 1000;
+    top: 0;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+ul.o_menu_apps .logo-img {
+    height: 3rem;
+}
+
+ul.o_menu_apps li.dropdown .dropdown-menu {
+    display: block;
+    top: 0px;
+    min-width: 100%;
+    min-height: calc(100% - 2px);
+    padding: 0 1rem 1rem;
+    box-shadow: none;
+    border: none;
+    background: transparent;
+    border-right: 1px solid #ccc;
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+}
+
+ul.o_menu_apps li.dropdown .dropdown-menu::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+/* Track */
+ul.o_menu_apps li.dropdown .dropdown-menu::-webkit-scrollbar-track {
+    -webkit-box-shadow: transparent;
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+}
+
+/* Handle */
+ul.o_menu_apps li.dropdown .dropdown-menu::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+    background: #b9b9b9;
+}
+ul.o_menu_apps li.dropdown .dropdown-menu::-webkit-scrollbar-thumb:window-inactive {
+    background: #b9b9b9;
+}
+
+ul.o_menu_apps li.dropdown .dropdown-menu .dropdown-item.o_app {
+    color: #212529;
+    font-size: 0.75rem;
+    padding: 0.5rem 0.75rem;
+}
+
+ul.o_menu_apps li.dropdown .dropdown-menu .dropdown-item.o_app.active .o_app_icon {
+    border-radius: 10px;
+}
+
+ul.o_menu_apps li.dropdown .dropdown-menu .dropdown-item.o_app.active .o_app_icon i.fa {
+    color: $background-color;
+    font-size: 16px;
+    width: 16px;
+    max-width: 16px;
+    text-align: center;
+}
+
+ul.o_menu_apps li.dropdown .dropdown-menu .dropdown-item.o_app:not(.active) .o_app_icon {
+    border-radius: 10px;
+}
+
+ul.o_menu_apps li.dropdown .dropdown-menu .dropdown-item.o_app:not(.active) .o_app_icon i.fa {
+    color: #212529;
+    font-size: 16px;
+    width: 16px;
+    max-width: 16px;
+    text-align: center;
+}
+
+ul.o_menu_apps li.dropdown .dropdown-menu .dropdown-item.o_app:not(.active) {
+    padding-left: 16px;
+}
+
+ul.o_menu_apps li.dropdown .dropdown-menu .dropdown-item.o_app.active {
+    color: #ffffff;
+    background-color: #714b67;
+    font-weight: 700;
+    border-radius: 0.25rem;
+}
+
+.dropdown-item.o_app:not(.active):hover, .dropdown-item.o_app:not(.active):focus {
+    color: #714b67!important;
+    background-color: transparent;
+
+    i.fa {
+        color: #714b67!important;
+    }
+}
+
+// navbar
+nav.o_main_navbar {
+    border: none;
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+    padding-left: 0;
+}
+
+a.o_menu_brand {
+    display: none!important;
+}
+
+nav.o_main_navbar .o_menu_sections .o_nav_entry, .o_main_navbar .o_menu_sections .dropdown-toggle {
+    background: transparent;
+    border: none;
+    color: $font-color!important
+}
+
+.o_main_navbar i.fa {
+    color: $font-color;
+}
+
+// responsive
+nav.o_main_navbar.o_main_navbar_shown {
+    ul.o_menu_apps {
+        transform: translate(0%, 60px)!important;
+        z-index: 10000;
+        height: calc(100vh - 60px);
+    }
+}
+
+.burger-menu {
+    display: block!important;
+    height: 100%;
+    transform: rotate(90deg);
+    margin-left: 1rem;
+    fill: #714b67;
+    cursor: pointer;
+}
+button.o_mobile_menu_toggle.o-no-caret.d-md-none.border-0 {
+    display: none!important;
+}
+
+@media only screen and (min-width: 768px) {
+    ul.o_menu_apps {
+        transform: translateX(0%);
+    }
+    nav.o_main_navbar {
+        padding-left: 220px;
+    }
+    .burger-menu {
+        display: none!important;
+    }
+    nav.o_main_navbar.o_main_navbar_shown {
+        ul.o_menu_apps {
+            transform: translateX(0%)!important;
+            z-index: 2;
+            height: 100vh;
+        }
+    }
+}

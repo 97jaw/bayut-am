@@ -1,0 +1,83 @@
+.o_web_client {
+    background-color: #fff;
+}
+
+.o_action_manager {
+    padding-left: 0;
+}
+
+@media only screen and (min-width: 768px) {
+    .o_action_manager {
+        padding-left: 220px;
+    }
+}
+
+.o_tooltip.o_tooltip_visible {
+    display: none;
+}
+
+.o_web_client a {
+    color: #666666;
+}
+
+.o_web_client .btn-link {
+    color: $primary-color;
+}
+
+.o_web_client .o_input {
+    border-radius: 0.25rem;
+    padding: 0.375rem 0.75rem;
+}
+
+.o_web_client .o_input:hover, .o_web_client .o_input:focus {
+    border: 1px solid #ced4da;
+}
+
+.o_web_client select.o_input {
+    height: 30px;
+    padding: 0.375rem 0.75rem!important;
+}
+
+.o_field_widget.o_field_many2manytags .o_input_dropdown > input {
+    padding: 0;
+}
+
+.ui-autocomplete .ui-menu-item > a.ui-state-active {
+    background-color: $primary-color;
+}
+
+.o_field_widget.o_field_many2one .o_external_button {
+    color: $primary-color;
+}
+
+button.btn {
+    border: none;
+    box-shadow: none!important;
+    outline: none!important;
+}
+
+button.btn.btn-primary, a.btn.btn-primary, .btn-fill-odoo, .btn-odoo, button.btn-outline-primary {
+    background-color: $primary-color;
+    border-color: $primary-color;
+    color: #fff;
+}
+
+button.btn-outline-primary {
+    color: #fff;
+}
+
+.btn-light, button.btn.btn-secondary {
+    background-color: transparent;
+    color: #6a6a6a;
+    border-color: #fff;
+}
+
+button.btn.btn-primary:hover, button.btn.btn-primary:active, button.btn.btn-primary:focus, 
+a.btn.btn-primary:hover, a.btn.btn-primary:active, a.btn.btn-primary:focus, 
+.btn-fill-odoo:hover, .btn-fill-odoo:active, .btn-fill-odoo:focus, 
+.btn-odoo:hover, .btn-odoo:active, .btn-odoo:focus, 
+button.btn-outline-primary:hover, button.btn-outline-primary:active, button.btn-outline-primary:focus{
+    background-color: darken($primary-color, 10%);
+    border-color: darken($primary-color, 10%);
+    color: #fff;
+}
