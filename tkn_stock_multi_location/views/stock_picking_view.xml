@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record id="view_picking_form_inherit_area" model="ir.ui.view">
+            <field name="name">stock.picking.form.inherit.area</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='move_ids_without_package']/tree/field[@name='product_id']" position="after">
+                    <field name="location_id" string="Source Location" optional="hide"/>
+                    <field name="location_dest_id" string="Destination Location" optional="hide"/>
+                </xpath>
+
+                <xpath expr="//field[@name='move_ids_without_package']/tree/field[@name='lot_ids']" position="after">
+                    <button name="%(tkn_stock_multi_location.action_available_quantities_wizard)d"
+                            icon="fa-location-arrow"
+                            title="Available Quantities" optional="hide" type="action" class="oe_highlight"
+                            invisible="picking_code != 'outgoing' or state == 'done'"/>
+                </xpath>
+
+                <xpath expr="//field[@name='move_ids_without_package']/tree/field[@name='lot_ids']" position="after">
+                    <button name="%(tkn_stock_multi_location.action_receive_quantities_wizard)d" icon="fa-location-arrow"
+                            title="Receiving Quantities" optional="hide" type="action" class="oe_highlight"
+                            invisible="picking_code != 'incoming' or state == 'done'"/>
+                </xpath>
+
+            </field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_available_quantities_wizard,access_available_quantities_wizard,model_available_quantities_wizard,stock.group_stock_user,1,1,1,0
+access_available.quantities.line,access_available_quantities_lines,model_available_quantities_line,stock.group_stock_user,1,1,1,0
+access_receive_quantities_wizard,access_receive_quantities_wizard,model_receive_quantities_wizard,stock.group_stock_user,1,1,1,0
+access_receive_quantities_line,access_receive_quantities_line,model_receive_quantities_line,stock.group_stock_user,1,1,1,0
